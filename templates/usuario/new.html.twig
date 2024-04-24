@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Alta Usuario{% endblock %}
+
+{% block body %}
+    <h1>Alta de Usuario</h1>
+
+    {{ include('usuario/_form.html.twig') }}
+
+    <a href="{{ path('app_usuario_index') }}">Regresar a la lista.</a>
+{% endblock %}

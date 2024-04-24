@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Soy Index{% endblock %}
+
+{% block body %}
+
+{#{    
+<h1>Identificador: {{ app.user.userIdentifier }}</h1>
+<h2> Nombre: {{ app.user.nombreUser }} </h2>
+<h2> Numero de empleado: {{ app.user.noEmpleado  }} </h2>
+<h2> Usuario: {{ app.user.email  }} </h2>}
+#}
+
+<div class="container bg-info">Index</div>
+
+{% endblock %}

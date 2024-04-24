@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Lista de Usuarios{% endblock %}
+
+{% block body %}
+    <h1>USUARIOS</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre_user</th>
+                <th>No_empleado</th>
+                <th>Es_dev</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usuario in usuarios %}
+            <tr>
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nombreUser }}</td>
+                <td>{{ usuario.noEmpleado }}</td>
+                <td>{{ usuario.esDev ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('app_usuario_show', {'id': usuario.id}) }}">Mostrar</a>
+                    <a href="{{ path('app_usuario_edit', {'id': usuario.id}) }}">Editar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Sin usuarios en DB</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_usuario_new') }}">Alta de usuario</a>
+{% endblock %}
